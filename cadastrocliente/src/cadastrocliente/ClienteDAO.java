@@ -39,5 +39,19 @@ public class ClienteDAO {
        }
        
    }
+
+    public void excluir(Integer id) {
+        String sql = "delete from cliente where id=?";
+                
+             try {
+           PreparedStatement preparadorSQL = conexao.prepareStatement(sql);
+           preparadorSQL.setInt(1, id);
+         
+           preparadorSQL.execute();
+           preparadorSQL.close();
+       } catch (SQLException ex) {
+           Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+       }
+    }
     
 }

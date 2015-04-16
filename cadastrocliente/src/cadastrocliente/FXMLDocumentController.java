@@ -28,7 +28,13 @@ public class FXMLDocumentController implements Initializable {
     private TextField tffone;
 
     @FXML
+    private TextField tfid;
+
+    @FXML
     private Label lbmsg;
+
+    //Gerenciador de dados // CRUD
+    ClienteService cliService = new ClienteService();
 
     @FXML
     private void aoClicarBtnSalvar(ActionEvent event) {
@@ -37,8 +43,6 @@ public class FXMLDocumentController implements Initializable {
         cliente.setNome(tfnome.getText());
         cliente.setFone(tffone.getText());
 
-        //Gerenciador de dados // CRUD
-        ClienteService cliService = new ClienteService();
         try {
             cliService.salvar(cliente);
             //Mensagem
@@ -48,6 +52,13 @@ public class FXMLDocumentController implements Initializable {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    @FXML
+    private void aoClicarBtnExcluir(ActionEvent event) {
+        Integer id = Integer.parseInt(tfid.getText());
+        cliService.excluir(id);
+         lbmsg.setText("Excluído com Sucesso!");
     }
 
     @Override

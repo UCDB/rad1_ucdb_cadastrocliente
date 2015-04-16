@@ -31,4 +31,8 @@ public class ClienteService {
         clienteDAO.salvar(cliente);
         
     }
+
+    public void excluir(Integer id) {
+        clienteDAO.excluir(id);
+    }
 }
