@@ -19,6 +19,12 @@ import java.util.logging.Logger;
 public class ClienteDAO {
 
    Connection conexao;
+
+    public ClienteDAO() {
+        conexao = ConexaoUtil.getConnection();
+    }
+   
+   
     
    public void salvar(Cliente cliente) {
        String sql ="insert  into cliente (nome,fone) values (?,?)";
