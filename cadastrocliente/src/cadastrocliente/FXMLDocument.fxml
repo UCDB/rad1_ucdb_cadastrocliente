@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:controller="cadastrocliente.FXMLDocumentController" 
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    
+
+    <Label text="Nome:" GridPane.rowIndex="0"  GridPane.columnIndex="0"    /> 
+    <TextField fx:id="tfnome"  GridPane.rowIndex="0" GridPane.columnIndex="1" />
+    <Label text="Fone:" GridPane.rowIndex="1"  GridPane.columnIndex="0"/>
+    <TextField fx:id="tffone"  GridPane.rowIndex="1" GridPane.columnIndex="1"  />
+    <Button text="Salvar" onAction="#aoClicarBtnSalvar" fx:id="btnSalvar" GridPane.rowIndex="2"  GridPane.columnIndex="0"   />
+    <Button text="Limpar!" fx:id="btnLimpar" GridPane.rowIndex="2"  GridPane.columnIndex="1"   />
+         
+</GridPane>
